@@ -1,0 +1,5 @@
+.idea/
+dist/
+*/obj/
+*/bin/
+*.DotSettings.user
