@@ -6,6 +6,12 @@ Small command line tool that helps cleaning up a large collection of snapshots
 
 https://git.bashclub.org/bashclub/zfs-housekeeping
 
+Idea:
+- keep-time=14d
+- keep-number=30
+- free-space=80G
+
+
 ```bash
 zfs list -t snapshot -o name,creation
 zfs get written

@@ -5,11 +5,19 @@ using Sandreas.SpectreConsoleHelpers.Services;
 using Spectre.Console;
 using Spectre.Console.Cli;
 using zfsclean.Commands;
+using zfsclean.Parsers;
 
 try
 {
-    
-    
+
+    var snapList = File.ReadAllText("/home/andreas/projects/zfsclean/var/zfs_list_-t_snapshot_-o_name,creation.txt");
+    var parser = new ZfsParser();
+    var snapshots = parser.ParseList(snapList);
+    foreach (var snap in snapshots)
+    {
+        Console.WriteLine(snap.Name + " | " + snap.Creation);
+    }
+    return 0;
 
     
     var debugMode = args.Contains("--debug");
